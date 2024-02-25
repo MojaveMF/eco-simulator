@@ -1,0 +1,4 @@
+Discord bot made for eco sim.
+
+Setup is easy just run this command
+npm i && npm run run
