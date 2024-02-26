@@ -4,6 +4,7 @@ import { GetAssetInfo } from "../modules/ecosim";
 import { ErrorEmbed } from "../modules/discord/error";
 import CreateAssetEmbed from "../modules/discord/asset/embed";
 import CreateAssetComponent from "../modules/discord/asset/row";
+import { IsAllowed } from "../modules/discord/internal";
 
 async function ProcessAssets(interaction: StringSelectMenuInteraction, assetId: number) {
     const asset = await GetAssetInfo(assetId);
@@ -27,6 +28,7 @@ export class AssetSelectionHandler extends InteractionHandler {
     public async run(interaction: StringSelectMenuInteraction) {
         const [id] = interaction.values[0].split(":");
         try {
+            await IsAllowed(interaction.user, interaction.member, interaction.channelId);
             await ProcessAssets(interaction, +id);
         } catch (err) {
             const errEmbed = await ErrorEmbed(err);

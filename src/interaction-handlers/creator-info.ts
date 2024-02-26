@@ -4,6 +4,7 @@ import { ErrorEmbed } from "../modules/discord/error";
 import { GetUserFromUserid } from "../modules/ecosim";
 import CreateUserEmbed from "../modules/discord/user/embed";
 import CreateUserComponent from "../modules/discord/user/row";
+import { IsAllowed } from "../modules/discord/internal";
 
 async function HandleInformation(interaction: ButtonInteraction, userid: number) {
     const user = await GetUserFromUserid(userid);
@@ -25,6 +26,7 @@ export class CreatorButton extends InteractionHandler {
         const userId = +rawId;
 
         try {
+            await IsAllowed(interaction.user, interaction.member, interaction.channelId);
             await HandleInformation(interaction, userId);
         } catch (err) {
             const errEmbed = await ErrorEmbed(err);

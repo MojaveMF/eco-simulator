@@ -4,6 +4,7 @@ import { GetUserFromUserid } from "../modules/ecosim";
 import CreateUserEmbed from "../modules/discord/user/embed";
 import CreateUserComponent from "../modules/discord/user/row";
 import { ErrorEmbed } from "../modules/discord/error";
+import { IsAllowed } from "../modules/discord/internal";
 
 async function ProcessUser(interaction: StringSelectMenuInteraction, id: number) {
     const user = await GetUserFromUserid(id);
@@ -24,6 +25,7 @@ export class FriendSelectionHandler extends InteractionHandler {
     public async run(interaction: StringSelectMenuInteraction) {
         const userid = +interaction.values[0];
         try {
+            await IsAllowed(interaction.user, interaction.member, interaction.channelId);
             await ProcessUser(interaction, userid);
         } catch (err) {
             const errEmbed = await ErrorEmbed(err);

@@ -4,6 +4,7 @@ import { ErrorEmbed } from "../modules/discord/error";
 import { GetUserFromUserid } from "../modules/ecosim";
 import CreateItemPickerEmbed from "../modules/discord/items/picker/embed";
 import CreateItemPickerComponent from "../modules/discord/items/picker/row";
+import { IsAllowed } from "../modules/discord/internal";
 
 async function HandleItems(interaction: ButtonInteraction, userid: number) {
     const user = await GetUserFromUserid(userid);
@@ -29,6 +30,7 @@ export class FriendsButton extends InteractionHandler {
         const userId = +rawId;
 
         try {
+            await IsAllowed(interaction.user, interaction.member, interaction.channelId);
             await HandleItems(interaction, userId);
         } catch (err) {
             const errEmbed = await ErrorEmbed(err);
