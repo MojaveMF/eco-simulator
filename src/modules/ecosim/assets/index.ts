@@ -56,6 +56,7 @@ export class Asset {
         return GetThumbnail(url.toString(), this.id);
     }
 
+    /* Horrible boilerplate ;( */
     constructor(assetInfo: AssetInfo) {
         this.id = assetInfo.id;
         this.assetType = assetInfo.assetType;
@@ -120,10 +121,12 @@ export async function GetUserItems(
     return (await GetAssetBatch(...itemsIds)).map((v) => new Asset(v));
 }
 
+/* Small function to convert into compatible type */
 async function ConvertId(id: number) {
     return { id: String(id), itemType: "Asset" };
 }
 
+/* Fetch information api and return decoded response */
 export async function GetAssetBatch(...ids: number[]): Promise<Asset[]> {
     const apiUrl = await api("catalog", "v1", "catalog", "items", "details");
     const items = await Promise.all(ids.map(ConvertId));
@@ -148,6 +151,7 @@ export async function GetAssetBatch(...ids: number[]): Promise<Asset[]> {
         throw "Failed to parse response from server";
     }
 
+    /* Convert AssetInfo into asset */
     return decodedResponse.map((v) => new Asset(v));
 }
 

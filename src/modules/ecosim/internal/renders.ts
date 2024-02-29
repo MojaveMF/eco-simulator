@@ -35,6 +35,7 @@ export async function GetThumbnail(
         throw "Failed to decode response";
     }
 
+    /* Check if the response is completed and targetId is correct */
     for (let response of decoded.data) {
         if (response.state != "Completed") continue;
         if (response.targetId != renderId) continue;
@@ -42,7 +43,9 @@ export async function GetThumbnail(
         return `https://` + config.Server.Website + response.imageUrl;
     }
 
+    /* Wait for the cooldown */
     await new Promise((resolve) => setTimeout(resolve, cooldown));
 
+    /* Rerun with decreased retries */
     return GetThumbnail(url, renderId, retries - 1, cooldown);
 }

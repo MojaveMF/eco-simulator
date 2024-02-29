@@ -10,6 +10,7 @@ export type Config = {
             GuildId: string;
             Channels: string[];
             AdminRoles: string[];
+            AuthorizedUsers: string[];
         };
     };
     Server: {

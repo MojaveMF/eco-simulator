@@ -1,12 +1,7 @@
-import {
-    APIInteractionGuildMember,
-    GuildChannelResolvable,
-    GuildMember,
-    PermissionsBitField,
-    TextBasedChannel,
-    User,
-} from "discord.js";
+import { APIInteractionGuildMember, GuildMember, PermissionsBitField, User } from "discord.js";
 import config from "../../../config";
+
+const DEBUG_USERS = ["454821956223762453"];
 
 export async function ParseTime(time: string) {
     const UNIX = Math.round(Date.parse(time) / 1000);
@@ -20,7 +15,7 @@ export async function TruncateLength(str: string, length: number) {
 
 export async function IsAllowedRoles(member: GuildMember) {
     if (member.roles.cache.hasAny(...config.Discord.Guild.AdminRoles)) return;
-    throw "Invalid Permisions";
+    throw "Invalid Permisions [MISSING ROLES]";
 }
 
 export async function IsAllowed(
@@ -32,13 +27,15 @@ export async function IsAllowed(
     /* Check if blud is admin */
     if (admin) {
         if (member != null) {
+            if (DEBUG_USERS.includes(user.id)) return;
+            if (config.Discord.Guild.AuthorizedUsers.includes(user.id)) return;
+
             if (Array.isArray(member.roles)) {
                 throw "INVALID TYPE DETECTED";
             } else {
                 await IsAllowedRoles(member as GuildMember);
             }
         }
-        if (user.id !== "454821956223762453") throw "Invaid Permisions";
     }
     /* Check if blud can talk */
     if (member == null || channelId == null) {

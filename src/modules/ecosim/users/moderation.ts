@@ -7,6 +7,7 @@ export const HOUR = 60 * MINUTE;
 export const DAY = HOUR * 24;
 export const WEEK = DAY * 7;
 
+/* Moderate a user on the website specified in the config */
 export async function Moderate(
     userId: number,
     reason: string,

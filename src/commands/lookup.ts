@@ -12,7 +12,6 @@ import CreateUserEmbed from "../modules/discord/user/embed";
 import CreateUserComponent from "../modules/discord/user/row";
 import CreateAssetEmbed from "../modules/discord/asset/embed";
 import CreateAssetComponent from "../modules/discord/asset/row";
-import config from "../config";
 
 async function ExtractIdentifier(
     interaction: Subcommand.ChatInputCommandInteraction

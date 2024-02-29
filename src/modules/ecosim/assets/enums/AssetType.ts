@@ -1,3 +1,4 @@
+/* Enums for roblox asset types */
 export enum AssetType {
     Head = 17,
     Face = 18,
