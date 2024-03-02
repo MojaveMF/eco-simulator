@@ -21,7 +21,7 @@ export default {
         Website: "economy-simulator.org",
         Authentication: {
             Headers: {
-                Cookie: ".ROBLOSECURITY=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzZXNzaW9uSWQiOiI1NTFkZTkwOC05MzRhLTQ1Y2UtODg3Zi0zMTE4YTNmYzc3YzIiLCJjcmVhdGVkQXQiOjE3MDgyODgxNjF9.6BiWqWY7A8Z6oihuApd9Ihsbgh8Emzsc9YIvZSYmNUf5y0Co6J54dlzIs6KcVMaC2KrTXAt8URPIsYx1bSa7jQ",
+                Cookie: "",
             },
         },
     },
