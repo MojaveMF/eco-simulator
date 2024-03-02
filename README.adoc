@@ -1,7 +1,0 @@
-= Economy Simulator discord bot
-A discord bot built for economy simulator instances.
-:doctype: book
-
-
-include::readme/setup.adoc[]
-
