@@ -1,13 +1,7 @@
 = Economy Simulator discord bot
 A discord bot built for economy simulator instances.
+:doctype: book
 
-ifdef::env-github[]
-:badges:
-endif::[]
-ifndef::env-github[:icons: font]
-ifdef::env-github[]
-:important-caption: :exclamation:
-endif::[]
 
 include::readme/setup.adoc[]
 
