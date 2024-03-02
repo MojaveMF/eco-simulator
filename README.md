@@ -16,7 +16,7 @@ I had created this massive bot for jeno after he asked since i had nothing bette
     - Assets
         - Asset id lookup
         - AssetName lookup
-        - Autofill usernames
+        - Autofill asset names
 
 #### ITEMS / USERS NOT SEARCHABLE WILL NOT WORK WITH USERNAME LOOKUP!
         
