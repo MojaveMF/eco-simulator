@@ -1,0 +1,40 @@
+= Setup
+Setup for the discord bot
+
+== Requirements
+* NodeJs https://nodejs.org/en[]
+* NPM (Normally bundled with NodeJs)
+
+== Configuration
+I would recomend starting of using the example config
+
+[source,ts]
+....
+include::code/config.example.ts[]
+....
+
+=== How to configure
+
+==== Required
+. Create a file in `src` called `config.ts` based of the example config
+. Set the Token in `Authentication.Token` to your discord bots token
+. Set the websites url in `Server.Website` 
+. Set Your cookie string in `Server.Authentication.Headers` (These are headers sent to every request)
+. Set allowed Channels and your guild id
+
+==== Optional
+* Set Guild ID (Im not sure if i ever used this)
+* Update your bots activity
+
+
+== Pre startup
+Before we can start the bot we need to download and install the dependencies.
+
+. Install the dependencies using `npm install`
+
+== Startup
+Now that we have setup the discord bot and installed all the dependencies we can now run the discord bot.
+
+. Run the command `npm run run`
+
+Now the discord bot has began running to stop it press `control+c`` in your terminal
