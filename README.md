@@ -1,6 +1,9 @@
 # ecosimulator-bot
 This bot is designed to work with eco-simulator instances.
 
+![GitHub last commit](https://img.shields.io/github/last-commit/MojaveMF/eco-simulator)
+![Typescript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF)
+
 ## Why is this open source?
 I had created this massive bot for jeno after he asked since i had nothing better to do. After creating i helped him setup / flush out bugs. But after this he had removed me and i couldnt contact him despite creating this bot so i have decided to open source it so someone can use it.
 
@@ -62,3 +65,14 @@ Put your discord servers guild id in Discord.Guild.GuildId and put channels for 
 Then you need to run `npm i` to install every dependency.
 After that run `npm run run` to start the bot.
 
+## Contributing
+
+Any changes that improve the bot are apreciated but im going to list my requirements.
+
+- No large functions unless required (60 lines +)
+- No reusing code that should be functional
+- Make everything async (Javascript runs faster the more you take advantage of that)
+- No generaly ugly code
+
+## Issues
+if you have any issues with the bot either contact me on discord or create an issue on the repo.
