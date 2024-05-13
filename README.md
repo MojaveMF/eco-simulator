@@ -1,6 +1,8 @@
 # ecosimulator-bot
 This bot is designed to work with eco-simulator instances.
 
+I DO NOT SUPPORT USING ROBLOX PROPERTY WITHOUT PERMISSION I HAVE NO INVOLVEMENT WITH ECONOMY SIMULATOR OUTSIDE OF THIS BOT
+
 ![GitHub last commit](https://img.shields.io/github/last-commit/MojaveMF/eco-simulator)
 ![Typescript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF)
 
